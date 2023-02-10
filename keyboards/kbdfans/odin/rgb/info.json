@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Odin RGB",
-    "manufacturer": "KBDFans",
-    "url": "",
+    "keyboard_name": "ODIN_RGB",
     "maintainer": "moyi4681",
-    "usb": {
-        "vid": "0x4B42",
-        "pid": "0x0102",
-        "device_version": "0.0.1"
-    },
+    "url": "",
     "layouts": {
         "LAYOUT_all": {
             "layout": [

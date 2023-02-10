@@ -18,6 +18,13 @@
 
 #include "config_common.h"
 
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x6964 // ID
+#define PRODUCT_ID      0x0075
+#define DEVICE_VER      0x0002
+#define MANUFACTURER    IDOBAO
+#define PRODUCT         ID75
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
@@ -34,6 +41,7 @@
 */
 #define MATRIX_ROW_PINS { B0, B3, C7, B6, C6 }
 #define MATRIX_COL_PINS { F6, F5, F4, F1, E6, D5, D3, D2, D1, D0, D4, D6, D7, B4, B5 }
+#define UNUSED_PINS
 
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
@@ -41,7 +49,7 @@
 #undef RGB_DI_PIN
 #define RGB_DI_PIN F0
 #ifdef RGB_MATRIX_ENABLE
-#    define RGB_MATRIX_LED_COUNT 85 /* 10 Bottom 75 top*/
+#    define DRIVER_LED_TOTAL 85 /* 10 Bottom 75 top*/
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
 // https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects

@@ -9,8 +9,6 @@
     #include "v2.h"
 #elif KEYBOARD_avalanche_v3
     #include "v3.h"
-#elif KEYBOARD_avalanche_v4
-    #include "v4.h"
 #endif
 
 #include "quantum.h"

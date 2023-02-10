@@ -1,4 +1,4 @@
-/* Copyright 2022 @ Keychron (https://www.keychron.com)
+/* Copyright 2021 @ Keychron (https://www.keychron.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,48 +14,35 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "quantum.h"
+#include "q0.h"
 
 #if defined(RGB_MATRIX_ENABLE) && defined(NUM_LOCK_LED_INDEX)
+    #if defined(NUM_LOCK_LED_INDEX)
+        #define NUM_LOCK_MAX_BRIGHTNESS 0xFF
+        #ifdef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+            #undef NUM_LOCK_MAX_BRIGHTNESS
+            #define NUM_LOCK_MAX_BRIGHTNESS RGB_MATRIX_MAXIMUM_BRIGHTNESS
+        #endif
 
-bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    if (!process_record_user(keycode, record)) {
-        return false;
-    }
-    switch (keycode) {
-#    ifdef RGB_MATRIX_ENABLE
-        case RGB_TOG:
-            if (record->event.pressed) {
-                switch (rgb_matrix_get_flags()) {
-                    case LED_FLAG_ALL: {
-                        rgb_matrix_set_flags(LED_FLAG_NONE);
-                        rgb_matrix_set_color_all(0, 0, 0);
-                    } break;
-                    default: {
-                        rgb_matrix_set_flags(LED_FLAG_ALL);
-                    } break;
-                }
+        #define NUM_LOCK_VAL_STEP 8
+        #ifdef RGB_MATRIX_VAL_STEP
+            #undef NUM_LOCK_VAL_STEP
+            #define NUM_LOCK_VAL_STEP RGB_MATRIX_VAL_STEP
+        #endif
+    #endif
+
+    void rgb_matrix_indicators_kb(void) {
+        if (host_keyboard_led_state().num_lock) {
+            uint8_t v = rgb_matrix_get_val();
+            if (v < NUM_LOCK_VAL_STEP) {
+                v = NUM_LOCK_VAL_STEP;
+            } else if (v < (NUM_LOCK_MAX_BRIGHTNESS - NUM_LOCK_VAL_STEP)) {
+                v += NUM_LOCK_VAL_STEP;  // one step more than current brightness
+            } else {
+                v = NUM_LOCK_MAX_BRIGHTNESS;
             }
-            return false;
-#    endif
-    }
-    return true;
-}
-
-bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
-    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
-        return false;
-    }
-    // RGB_MATRIX_INDICATOR_SET_COLOR(index, red, green, blue);
-
-    if (host_keyboard_led_state().num_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX, 255, 255, 255);
-    } else {
-        if (!rgb_matrix_get_flags()) {
-            RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX, 0, 0, 0);
+            rgb_matrix_set_color(NUM_LOCK_LED_INDEX, v, v, v);  // white, with the adjusted brightness
         }
     }
-    return true;
-}
 
-#endif  // NUM_LOCK_LED_INDEX
+#endif  // CAPS_LOCK_LED_INDEX

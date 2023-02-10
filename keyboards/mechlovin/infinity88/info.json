@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Infinity 88",
-    "manufacturer": "Team.Mechlovin",
+    "keyboard_name": "infinity88",
     "url": "",
     "maintainer": "mechlovin",
-    "usb": {
-        "vid": "0x4D4C",
-        "pid": "0x8802",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

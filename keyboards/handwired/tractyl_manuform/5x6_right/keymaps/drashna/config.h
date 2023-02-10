@@ -29,8 +29,7 @@
 
 #define ENCODER_DEFAULT_POS 0x3
 
-
-#define BOOTMAGIC_LITE_EEPROM_ROW          1
-#define BOOTMAGIC_LITE_EEPROM_COLUMN       0
-#define BOOTMAGIC_LITE_EEPROM_ROW_RIGHT    7
-#define BOOTMAGIC_LITE_EEPROM_COLUMN_RIGHT 5
+#define SECURE_UNLOCK_SEQUENCE \
+    {                          \
+        { 2, 1 }, { 2, 2 }, { 2, 3 }, { 2, 4 } \
+    }

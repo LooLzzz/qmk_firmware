@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Dactyl-Manuform (6x7)",
-    "manufacturer": "tshort",
+    "keyboard_name": "Dactyl Manuform 6x7",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x444D",
-        "pid": "0x3636",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_6x7": {
             "layout": [

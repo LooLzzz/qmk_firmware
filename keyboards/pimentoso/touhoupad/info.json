@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "TouhouPad rev2",
-    "manufacturer": "Pimentoso",
+    "keyboard_name": "TouhouPad",
     "url": "https://github.com/Pimentoso/TouhouPad_v2",
     "maintainer": "Pimentoso",
-    "usb": {
-        "vid": "0xD00D",
-        "pid": "0x0031",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

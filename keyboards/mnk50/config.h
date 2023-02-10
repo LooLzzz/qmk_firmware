@@ -19,6 +19,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x8968
+#define PRODUCT_ID      0x4D35
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    Yiancar-Designs
+#define PRODUCT         MNK50
+
 /* key matrix size */
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 14
@@ -32,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
 
-/* Ensure we jump to bootloader if the QK_BOOT keycode was pressed */
+/* Ensure we jump to bootloader if the RESET keycode was pressed */
 #define EARLY_INIT_PERFORM_BOOTLOADER_JUMP TRUE
 
 /* define if matrix has ghost (lacks anti-ghosting diodes) */

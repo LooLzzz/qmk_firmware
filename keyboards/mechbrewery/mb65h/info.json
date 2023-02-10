@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "MB65H",
-    "manufacturer": "MechBrewery",
+    "keyboard_name": "mb65h",
     "url": "",
     "maintainer": "AnthonyNguyen168",
-    "usb": {
-        "vid": "0x4252",
-        "pid": "0x0002",
-        "device_version": "0.0.1"
-    },
     "layouts": {
 
         "LAYOUT_65_ansi_blocker": {

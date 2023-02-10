@@ -1,6 +1,12 @@
+#----------------------------------------------------------------------------
+# make georgi:claymager:dfu
+# Make sure you have dfu-programmer installed!
+#----------------------------------------------------------------------------
+
 NO_REPEAT				 = yes
 VERBOSE					 = yes
 KEYBOARD_SHARED_EP       = yes
+CUSTOM_MATRIX			 = yes
 STENO_LAYERS			 = yes
 
 #Firmware reduction options
@@ -18,6 +24,7 @@ ONLY_QWERTY				 = no
 # know what you're doing.
 #
 # No touchy, capiche?
+SRC += matrix.c i2c_master.c
 ifeq ($(strip $(DEBUG_MATRIX)), yes)
     OPT_DEFS += -DDEBUG_MATRIX
 endif
@@ -36,5 +43,3 @@ endif
 ifeq ($(strip $(STENO_LAYERS)), yes)
     OPT_DEFS += -DSTENOLAYERS
 endif
-
-SRC += sten.c

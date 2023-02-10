@@ -1,13 +1,8 @@
 {
-    "keyboard_name": "Freebird Numpad Lite",
-    "manufacturer": "KeebsForAll",
+    "keyboard_name": "FreebirdNP Lite",
     "url": "https://keebsforall.com/products/fb-numpad-lite",
     "maintainer": "e11i0t23",
-    "usb": {
-        "vid": "0x6B66",
-        "pid": "0x1013",
-        "device_version": "0.0.1"
-    },
+    "manufacturer": "KeebsForAll",
     "layouts": {
         "LAYOUT_numpad_5x4": {
             "layout": [

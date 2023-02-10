@@ -15,9 +15,6 @@
  */
 
 #include "process_ucis.h"
-#include "unicode.h"
-#include "keycode.h"
-#include "wait.h"
 
 qk_ucis_state_t qk_ucis_state;
 
@@ -29,7 +26,9 @@ void qk_ucis_start(void) {
 }
 
 __attribute__((weak)) void qk_ucis_start_user(void) {
-    register_unicode(0x2328); // ⌨
+    unicode_input_start();
+    register_hex(0x2328); // ⌨
+    unicode_input_finish();
 }
 
 __attribute__((weak)) void qk_ucis_success(uint8_t symbol_index) {}
@@ -52,7 +51,10 @@ static bool is_uni_seq(char *seq) {
 
 __attribute__((weak)) void qk_ucis_symbol_fallback(void) {
     for (uint8_t i = 0; i < qk_ucis_state.count - 1; i++) {
-        tap_code(qk_ucis_state.codes[i]);
+        uint8_t keycode = qk_ucis_state.codes[i];
+        register_code(keycode);
+        unregister_code(keycode);
+        wait_ms(UNICODE_TYPE_DELAY);
     }
 }
 
@@ -61,6 +63,7 @@ __attribute__((weak)) void qk_ucis_cancel(void) {}
 void register_ucis(const uint32_t *code_points) {
     for (int i = 0; i < UCIS_MAX_CODE_POINTS && code_points[i]; i++) {
         register_unicode(code_points[i]);
+        wait_ms(UNICODE_TYPE_DELAY);
     }
 }
 
@@ -91,7 +94,9 @@ bool process_ucis(uint16_t keycode, keyrecord_t *record) {
         case KC_ENTER:
         case KC_ESCAPE:
             for (uint8_t i = 0; i < qk_ucis_state.count; i++) {
-                tap_code(KC_BACKSPACE);
+                register_code(KC_BACKSPACE);
+                unregister_code(KC_BACKSPACE);
+                wait_ms(UNICODE_TYPE_DELAY);
             }
 
             if (keycode == KC_ESCAPE) {

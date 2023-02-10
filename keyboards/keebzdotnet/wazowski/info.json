@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "wazowski 23-19",
-    "manufacturer": "keebzdotnet",
+    "keyboard_name": "wazowski",
     "url": "https://www.keebz.net/shop/wazoski-pcb",
     "maintainer": "keebzdotnet",
-    "usb": {
-        "vid": "0x4B5A",
-        "pid": "0x53FC",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

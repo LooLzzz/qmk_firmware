@@ -1,5 +1,6 @@
 {
   "manufacturer": "CapsUnlocked",
+  "keyboard_name": "CapsUnlocked CU80 v2 ANSI",
   "maintainer": "rys / maz0r",
   "bootloader": "atmel-dfu",
   "debounce": 5,
@@ -25,16 +26,7 @@
   "processor": "atmega32u4",
   "rgblight": {
     "animations": {
-      "alternating": false,
-      "breathing": false,
-      "christmas": false,
-      "knight": false,
-      "rainbow_mood": false,
-      "rainbow_swirl": false,
-      "rgb_test": false,
-      "snake": false,
-      "static_gradient": false,
-      "twinkle": false
+      "all": false
     },
     "brightness_steps": 8,
     "hue_steps": 8,
@@ -46,6 +38,7 @@
   "url": "https://caps-unlocked.com/cu80-round-2/",
   "usb": {
     "device_version": "0.0.1",
+    "pid": "0x0081",
     "vid": "0x4355"
   },
   "community_layouts": ["tkl_ansi"],

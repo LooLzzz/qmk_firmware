@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "LFK78 Rev B",
-    "manufacturer": "LFKeyboards",
+    "keyboard_name": "LFK78/68 Rev B",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x4C46",
-        "pid": "0x3738",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

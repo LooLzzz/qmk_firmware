@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "PhysiX",
-    "manufacturer": "LZ",
+    "keyboard_name": "physix",
     "url": "",
     "maintainer": "hineybush",
-    "usb": {
-        "vid": "0x04D8",
-        "pid": "0xEC81",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

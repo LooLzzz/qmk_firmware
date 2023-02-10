@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "OrangeBoyErgo",
-    "manufacturer": "MechWild",
+    "keyboard_name": "MechWild OBE",
     "url": "mechwild.com",
     "maintainer": "Kyle McCreery",
-    "usb": {
-        "vid": "0x6D77",
-        "pid": "0x1707",
-        "device_version": "2.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

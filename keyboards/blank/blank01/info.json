@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "BLANK.01",
-    "manufacturer": "BLANK",
+    "keyboard_name": "blank01",
     "url": "",
     "maintainer": "gkeyboard",
-    "usb": {
-        "vid": "0x424C",
-        "pid": "0x4B01",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_60_tsangan_hhkb": {
             "layout": [

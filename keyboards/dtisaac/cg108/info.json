@@ -1,13 +1,9 @@
 {
     "keyboard_name": "CG108",
-    "manufacturer": "DTIsaac",
     "url": "",
     "maintainer": "daotakisaac",
-    "usb": {
-        "vid": "0x4454",
-        "pid": "0x4973",
-        "device_version": "0.0.2"
-    },
+    "width": 22.5,
+    "height": 6.5,
     "layouts": {
         "LAYOUT": {
             "layout": [

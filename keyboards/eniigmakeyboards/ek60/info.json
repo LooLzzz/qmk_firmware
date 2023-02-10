@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "EK60",
-    "manufacturer": "Eniigma Keyboards",
+    "keyboard_name": "ek60",
     "url": "",
     "maintainer": "adamws",
-    "usb": {
-        "vid": "0x454B",
-        "pid": "0x0003",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout":[

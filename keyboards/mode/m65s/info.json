@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "SixtyFive S",
-    "manufacturer": "Mode",
+    "keyboard_name": "Mode SixtyFive S",
     "url": "",
     "maintainer": "Gondolindrim",
-    "usb": {
-        "vid": "0x00DE",
-        "pid": "0x6583",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

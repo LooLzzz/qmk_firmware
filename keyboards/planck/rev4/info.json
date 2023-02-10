@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Planck",
-  "manufacturer": "OLKB",
+  "keyboard_name": "Planck rev 4",
   "url": "https://olkb.com/planck",
   "maintainer": "jackhumbert",
-  "usb": {
-    "vid": "0x03A8",
-    "pid": "0xAE01",
-    "device_version": "0.0.4"
-  },
   "layouts": {
     "LAYOUT_planck_1x2uC": {
       "layout": [

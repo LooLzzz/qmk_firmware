@@ -1,11 +1,7 @@
 {
-    "keyboard_name": "m65",
-    "manufacturer": "Alin Elena",
+    "keyboard_name": "M65",
     "url": "https://gitlab.com/m-lego/m65",
     "maintainer": "alin elena",
-    "usb": {
-        "vid": "0xBABA"
-    },
     "layouts": {
         "LAYOUT_ortho_5x13": {
             "layout": [

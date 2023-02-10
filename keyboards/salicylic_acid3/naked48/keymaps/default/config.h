@@ -22,5 +22,7 @@
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+//#define USE_SERIAL
+
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 180

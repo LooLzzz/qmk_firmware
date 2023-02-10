@@ -1,11 +1,7 @@
 {
-    "manufacturer": "KgOfHedgehogs",
+    "keyboard_name": "jian",
     "url": "t.me/s/kgofhedgehogs",
     "maintainer": "KGOH",
-    "usb": {
-        "vid": "0xC0DE",
-        "pid": "0x1337"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

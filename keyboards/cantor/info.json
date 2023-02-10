@@ -12,7 +12,6 @@
         "nkro": true
     },
     "processor": "STM32F401",
-    "board": "BLACKPILL_STM32_F401",
     "url": "https://github.com/diepala/cantor",
     "usb": {
         "device_version": "1.0.0",

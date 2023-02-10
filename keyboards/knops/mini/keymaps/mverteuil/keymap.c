@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *
      */
     [_LAYER_SELECT] = LAYOUT(
-        _______, _______, QK_BOOT,
+        _______, _______, RESET,
         TO(_MEDIA),TO(_COPYPASTA),TO(_SPECTACLES)
     )
 };

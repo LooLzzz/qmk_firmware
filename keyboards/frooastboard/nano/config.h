@@ -18,6 +18,10 @@
 
 #include "config_common.h"
 
+/* USB Device descriptor parameter */
+#define MANUFACTURER    frooastside
+#define PRODUCT         Frooastboard Nano
+
 /* key matrix size */
 #define MATRIX_ROWS 2
 #define MATRIX_COLS 2

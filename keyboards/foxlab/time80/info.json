@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Time80",
-    "manufacturer": "Fox Lab",
+    "keyboard_name": "Fox Lab Time 80",
     "url": "",
     "maintainer": "lukelex",
-    "usb": {
-        "vid": "0x464C",
-        "pid": "0x0005",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

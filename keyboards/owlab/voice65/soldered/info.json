@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Voice65 Soldered",
-    "manufacturer": "OwLab",
+    "keyboard_name": "voice65 soldered",
     "url": "https://www.popkeyboard.com/products/67968vn00mzx",
     "maintainer": "kb-elmo",
-    "usb": {
-        "vid": "0x4F53",
-        "pid": "0x5657",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

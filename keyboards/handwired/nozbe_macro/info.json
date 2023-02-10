@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Nozbe Reunion Pad",
-    "manufacturer": "Leon Omelan",
+    "keyboard_name": "nozbe_macro",
     "url": "",
     "maintainer": "Leon Omelan",
-    "usb": {
-        "vid": "0xFEED",
-        "pid": "0x6060",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

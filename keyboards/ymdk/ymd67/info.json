@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "YMD67",
-    "manufacturer": "YMDK",
+    "keyboard_name": "ymd67",
     "url": "https://www.aliexpress.com/item/4000311811121.html",
     "maintainer": "SwiftLawnGnome",
-    "usb": {
-        "vid": "0x594D",
-        "pid": "0x6060",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

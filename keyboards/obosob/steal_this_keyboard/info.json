@@ -1,16 +1,7 @@
 {
-    "keyboard_name": "Steal This Keyboard!",
-    "manufacturer": "Obosob",
+    "keyboard_name": "steal this keyboard",
     "url": "https://github.com/obosob/steal_this_keyboard",
     "maintainer": "@obosob",
-    "usb": {
-        "vid": "0xC2AB",
-        "pid": "0x50AD",
-        "device_version": "0.0.1"
-    },
-    "community_layouts": [
-        "split_3x5_2"
-    ],
     "layouts": {
         "LAYOUT_split_3x5_2": {
             "layout": [

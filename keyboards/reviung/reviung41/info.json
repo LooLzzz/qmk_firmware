@@ -1,18 +1,9 @@
 {
-    "keyboard_name": "reviung41",
-    "manufacturer": "gtips",
+    "keyboard_name": "reviung39",
     "url": "",
     "maintainer": "gtips",
-    "usb": {
-        "vid": "0x7807",
-        "pid": "0xDCCB",
-        "device_version": "0.0.1"
-    },
-    "layout_aliases": {
-        "LAYOUT_reviung41": "LAYOUT"
-    },
     "layouts": {
-        "LAYOUT": {
+        "LAYOUT_reviung41": {
             "layout": [
                 {"label":"K00", "x":0, "y":0.54},
                 {"label":"K01", "x":1, "y":0.36},

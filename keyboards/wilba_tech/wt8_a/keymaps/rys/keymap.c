@@ -55,8 +55,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `---------------------------'
    */
    [_BL0] = LAYOUT(
-     STOKEN1, STOKEN2, STOKEN3, STOKEN4,
-    MO(_FL1), MACOSLK, KC_VOLD, KC_VOLU),
+     STOKEN1, STOKEN2, STOKEN3,     STOKEN4,
+    MO(_FL1), MACOSLK, KC__VOLDOWN, KC__VOLUP),
   /* Keymap base layer (_FL1) - function layer 1
    * ,---------------------------.
    * |      |      |      |      |
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
    [_FL1] = LAYOUT(
      _______, _______, _______, _______,
-     _______, STOKEN5, KC_NUBS, QK_BOOT),
+     _______, STOKEN5, KC_NUBS, RESET),
   /* Keymap base layer (_FL2) - function layer 2
    * ,---------------------------.
    * |      |      |      |      |

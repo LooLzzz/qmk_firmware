@@ -2,6 +2,14 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x4C41 // "LA" Lozyuk Alexander
+#define PRODUCT_ID      0x0001
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    keyzog
+#define PRODUCT         Kapl Keyboard
+
 /* key matrix size */
 /* Rows are doubled up */
 #define MATRIX_ROWS 10
@@ -18,6 +26,9 @@
 #define DEBOUNCE 5
 
 
+/* Serial settings */
+#define USE_SERIAL
+
 /* serial.c configuration for split keyboard */
 #define SOFT_SERIAL_PIN D2
 
@@ -31,7 +42,7 @@
 #define RGBLIGHT_SPLIT
 #define RGBLIGHT_LIMIT_VAL 120 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
 
-#define RGB_MATRIX_LED_COUNT 88
+#define DRIVER_LED_TOTAL 88
 #define RGB_MATRIX_SPLIT { 44, 44 }
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 120 // limits maximum brightness of LEDs to 150 out of 255. Higher may cause the controller to crash.
 #define SPLIT_TRANSPORT_MIRROR

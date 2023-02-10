@@ -24,8 +24,7 @@
 #include <string.h>
 
 #ifndef ENCODER_MAP_KEY_DELAY
-#    include "action.h"
-#    define ENCODER_MAP_KEY_DELAY TAP_CODE_DELAY
+#    define ENCODER_MAP_KEY_DELAY 2
 #endif
 
 #if !defined(ENCODER_RESOLUTIONS) && !defined(ENCODER_RESOLUTION)
@@ -56,6 +55,7 @@ static int8_t encoder_LUT[] = {0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, 
 
 static uint8_t encoder_state[NUM_ENCODERS]  = {0};
 static int8_t  encoder_pulses[NUM_ENCODERS] = {0};
+static bool    encoder_external_update[NUM_ENCODERS] = { false };
 
 // encoder counts
 static uint8_t thisCount;
@@ -78,10 +78,6 @@ __attribute__((weak)) bool encoder_update_user(uint8_t index, bool clockwise) {
 
 __attribute__((weak)) bool encoder_update_kb(uint8_t index, bool clockwise) {
     return encoder_update_user(index, clockwise);
-}
-
-__attribute__((weak)) bool should_process_encoder(void) {
-    return is_keyboard_master();
 }
 
 void encoder_init(void) {
@@ -148,14 +144,9 @@ void encoder_init(void) {
 static void encoder_exec_mapping(uint8_t index, bool clockwise) {
     // The delays below cater for Windows and its wonderful requirements.
     action_exec(clockwise ? ENCODER_CW_EVENT(index, true) : ENCODER_CCW_EVENT(index, true));
-#    if ENCODER_MAP_KEY_DELAY > 0
     wait_ms(ENCODER_MAP_KEY_DELAY);
-#    endif // ENCODER_MAP_KEY_DELAY > 0
-
     action_exec(clockwise ? ENCODER_CW_EVENT(index, false) : ENCODER_CCW_EVENT(index, false));
-#    if ENCODER_MAP_KEY_DELAY > 0
     wait_ms(ENCODER_MAP_KEY_DELAY);
-#    endif // ENCODER_MAP_KEY_DELAY > 0
 }
 #endif // ENCODER_MAP_ENABLE
 
@@ -173,44 +164,27 @@ static bool encoder_update(uint8_t index, uint8_t state) {
     index += thisHand;
 #endif
     encoder_pulses[i] += encoder_LUT[state & 0xF];
-
-#ifdef ENCODER_DEFAULT_POS
-    if ((encoder_pulses[i] >= resolution) || (encoder_pulses[i] <= -resolution) || ((state & 0x3) == ENCODER_DEFAULT_POS)) {
-        if (encoder_pulses[i] >= 1) {
-#else
     if (encoder_pulses[i] >= resolution) {
-#endif
-
-            encoder_value[index]++;
-            changed = true;
-#ifdef SPLIT_KEYBOARD
-            if (should_process_encoder())
-#endif // SPLIT_KEYBOARD
+        encoder_value[index]++;
+        changed = true;
 #ifdef ENCODER_MAP_ENABLE
-                encoder_exec_mapping(index, ENCODER_COUNTER_CLOCKWISE);
+        encoder_exec_mapping(index, ENCODER_COUNTER_CLOCKWISE);
 #else  // ENCODER_MAP_ENABLE
         encoder_update_kb(index, ENCODER_COUNTER_CLOCKWISE);
 #endif // ENCODER_MAP_ENABLE
-        }
-
-#ifdef ENCODER_DEFAULT_POS
-        if (encoder_pulses[i] <= -1) {
-#else
+    }
     if (encoder_pulses[i] <= -resolution) { // direction is arbitrary here, but this clockwise
-#endif
-            encoder_value[index]--;
-            changed = true;
-#ifdef SPLIT_KEYBOARD
-            if (should_process_encoder())
-#endif // SPLIT_KEYBOARD
+        encoder_value[index]--;
+        changed = true;
 #ifdef ENCODER_MAP_ENABLE
-                encoder_exec_mapping(index, ENCODER_CLOCKWISE);
+        encoder_exec_mapping(index, ENCODER_CLOCKWISE);
 #else  // ENCODER_MAP_ENABLE
         encoder_update_kb(index, ENCODER_CLOCKWISE);
 #endif // ENCODER_MAP_ENABLE
-        }
-        encoder_pulses[i] %= resolution;
+    }
+    encoder_pulses[i] %= resolution;
 #ifdef ENCODER_DEFAULT_POS
+    if ((state & 0x3) == ENCODER_DEFAULT_POS) {
         encoder_pulses[i] = 0;
     }
 #endif
@@ -221,10 +195,11 @@ bool encoder_read(void) {
     bool changed = false;
     for (uint8_t i = 0; i < thisCount; i++) {
         uint8_t new_status = (readPin(encoders_pad_a[i]) << 0) | (readPin(encoders_pad_b[i]) << 1);
-        if ((encoder_state[i] & 0x3) != new_status) {
+        if ((encoder_state[i] & 0x3) != new_status || encoder_external_update[i]) {
             encoder_state[i] <<= 2;
             encoder_state[i] |= new_status;
             changed |= encoder_update(i, encoder_state[i]);
+            encoder_external_update[i] = false;
         }
     }
     return changed;
@@ -268,3 +243,10 @@ void encoder_update_raw(uint8_t *slave_state) {
     if (changed) last_encoder_activity_trigger();
 }
 #endif
+
+void encoder_insert_state(uint8_t index) {
+    encoder_state[index] <<= 2;
+    encoder_state[index] |= (readPin(encoders_pad_a[index]) << 0) | (readPin(encoders_pad_b[index]) << 1);
+    encoder_pulses[index] += encoder_LUT[encoder_state[index] & 0xF];
+    encoder_external_update[index] = true;
+}

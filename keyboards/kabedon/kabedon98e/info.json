@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "98e",
-    "manufacturer": "Kabe_Don",
+    "keyboard_name": "KabeDon98E",
     "url": "",
     "maintainer": "370490639",
-    "usb": {
-        "vid": "0x4B44",
-        "pid": "0x3935",
-        "device_version": "0.0.2"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

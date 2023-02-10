@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Alice",
-  "manufacturer": "TGR",
+  "keyboard_name": "TGR Alice",
   "url": "",
   "maintainer": "Felipe Coury",
-  "usb": {
-    "vid": "0x20A0",
-    "pid": "0x422E",
-    "device_version": "2.0.0"
-  },
   "layouts": {
     "LAYOUT_alice_split_bs": {
       "layout": [

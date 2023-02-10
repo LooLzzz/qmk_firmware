@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "ISOlation",
-    "manufacturer": "kb-elmo",
+    "keyboard_name": "isolation",
     "url": "",
     "maintainer": "kb-elmo",
-    "usb": {
-        "vid": "0xA68C",
-        "pid": "0x4EE6",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

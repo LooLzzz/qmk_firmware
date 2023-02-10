@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "AkiS",
-    "manufacturer": "Xelus",
+    "keyboard_name": "akiS",
     "url": "https://github.com/qmk/qmk_firmware/tree/master/keyboards/xelus/akis",
     "maintainer": "Xelus22",
-    "usb": {
-        "vid": "0x5845",
-        "pid": "0xA04B",
-        "device_version": "0.0.1"
-    },
     "layout_aliases": {
         "LAYOUT_65_all": "LAYOUT_all"
     },

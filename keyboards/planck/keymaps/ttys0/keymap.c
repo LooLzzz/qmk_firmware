@@ -76,7 +76,7 @@
 #define mins KC_MINS
 #define quot KC_QUOT
 #define esc KC_ESC
-#define escg QK_GESC
+#define escg KC_GESC
 
 #define down KC_DOWN
 #define home G(KC_LEFT)
@@ -128,8 +128,8 @@
 #define move MO(MOVE)
 #define func MO(FUNC)
 
-#define rset QK_BOOT
-#define powr KC_PWR
+#define rset RESET
+#define powr KC_POWER
 
 #define ____ KC_TRNS
 #define xxxx KC_NO

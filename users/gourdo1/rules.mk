@@ -1,6 +1,4 @@
 SRC += gourdo1.c
-SRC += autocorrect/autocorrection.c
-
 ifdef ENCODER_ENABLE
 	# include encoder related code when enabled
 	ifeq ($(strip $(ENCODER_DEFAULTACTIONS_ENABLE)), yes)

@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Wampus",
-    "manufacturer": "zoo.haus",
+    "keyboard_name": "zoo.haus Wampus",
     "url": "https://zoo.haus",
     "maintainer": "zoo",
-    "usb": {
-        "vid": "0x0200",
-        "pid": "0xE600",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_alice_split_bs": {
             "layout": [

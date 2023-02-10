@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Lefty",
-  "manufacturer": "SmollChungus",
+  "keyboard_name": "lefty",
   "url": "https://github.com/smollchungus",
   "maintainer": "smollchungus",
-  "usb": {
-    "vid": "0x5363",
-    "pid": "0x0001",
-    "device_version": "0.0.1"
-  },
   "layouts": {
     "LAYOUT_all": {
         "layout": [

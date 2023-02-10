@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Valor Rev2",
-    "manufacturer": "Xelus",
+    "keyboard_name": "Xelus Valor Rev2",
     "url": "",
     "maintainer": "Xelus22",
-    "usb": {
-        "vid": "0x5845",
-        "pid": "0x5653",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_alice_split_bs": {
             "layout": [

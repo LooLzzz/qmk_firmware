@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Ares",
-    "manufacturer": "LSJ",
+    "keyboard_name": "LSJ Ares",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x20A0",
-        "pid": "0x422D",
-        "device_version": "2.0.0"
-    },
     "layout_aliases": {
         "LAYOUT": "LAYOUT_all"
     },

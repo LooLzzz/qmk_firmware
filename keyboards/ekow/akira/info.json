@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "AKIRA",
-    "manufacturer": "Keeboyzlab",
+    "keyboard_name": "KEYBOYZLAB:AKIRA",
     "maintainer": "eugenepy",
     "url": "http://github.com/EugenePY",
-    "usb": {
-        "vid": "0x4B59",
-        "pid": "0x414B",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_60_hhkb": {
             "layout": [

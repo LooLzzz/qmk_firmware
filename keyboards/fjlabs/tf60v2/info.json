@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "TF60 V2",
-    "manufacturer": "FJLabs",
+    "keyboard_name": "TF60 RGB V2",
     "url": "https://www.fjlaboratories.com/",
     "maintainer": "FJLabs",
-    "usb": {
-        "vid": "0x7074",
-        "pid": "0x1005",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_60_ansi_arrow": {
             "layout": [

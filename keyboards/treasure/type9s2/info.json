@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Type-9 Series II",
-    "manufacturer": "Treasure",
+    "keyboard_name": "Treasure TYPE-9 Series II",
     "url": "http://treasuretypes.com",
     "maintainer": "Treasure",
-    "usb": {
-        "vid": "0x5452",
-        "pid": "0x5492",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_ortho_3x3": {
             "layout": [

@@ -1,12 +1,7 @@
 {
-    "keyboard_name": "Sono1", 
-    "manufacturer": "ASKeyboard",
+    "keyboard_name": "sono1", 
     "url": "", 
     "maintainer": "DmNosachev", 
-    "usb": {
-        "vid": "0x515A",
-        "pid": "0x5331"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

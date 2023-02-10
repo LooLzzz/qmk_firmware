@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Virgo",
-    "manufacturer": "FLX",
+    "keyboard_name": "FLX Virgo",
     "url": "",
     "maintainer": "mechmerlin",
-    "usb": {
-        "vid": "0x4658",
-        "pid": "0x5647",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

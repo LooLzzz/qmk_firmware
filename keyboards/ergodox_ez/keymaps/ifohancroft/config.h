@@ -1,4 +1,4 @@
-/* Copyright 2022 IFo Hancroft
+/* Copyright 2021 IFo Hancroft
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,9 +17,5 @@
 #pragma once
 
 // place overrides here
+#define USB_POLLING_INTERVAL_MS 1
 #define FORCE_NKRO
-#ifdef TAPPING_TOGGLE
-#    undef TAPPING_TOGGLE
-#endif
-#define TAPPING_TOGGLE 3
-

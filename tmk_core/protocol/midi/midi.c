@@ -19,9 +19,7 @@
 #include "midi.h"
 #include <string.h> //for memcpy
 
-#ifndef MIN
-#    define MIN(x, y) (((x) < (y)) ? (x) : (y))
-#endif
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
 #ifndef NULL
 #    define NULL 0

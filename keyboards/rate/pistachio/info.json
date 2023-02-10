@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "pistachio", 
-    "manufacturer": "rate",
+    "keyboard_name": "Pistachio", 
     "url": "", 
     "maintainer": "rate", 
-    "usb": {
-        "vid": "0x5255",
-        "pid": "0xD0C2",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [{"label":"ESC", "x":1.25, "y":0.25},

@@ -19,8 +19,6 @@
 
 #pragma once
 
-#include <stdint.h>
-
 #define I2C_READ 0x01
 #define I2C_WRITE 0x00
 

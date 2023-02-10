@@ -16,6 +16,13 @@
 
 #pragma once
 
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x574D // WM
+#define PRODUCT_ID      0x0001
+#define DEVICE_VER      0x0001 // Revision prototype
+#define MANUFACTURER    WestM
+#define PRODUCT         WestMErgo
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 16
@@ -36,7 +43,7 @@
 #define RGBLIGHT_EFFECT_TWINKLE
 // The pin connected to the data pin of the LEDs
 #define RGB_DI_PIN A8
-#define RGBLED_NUM 16
+#define RGBLED_NUM 19
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST

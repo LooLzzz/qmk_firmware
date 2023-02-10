@@ -17,7 +17,7 @@
                                 }
 #endif
 
-#define MUSIC_MASK (keycode != MU_TOGG)
+#define MUSIC_MASK (keycode != MU_TOG)
 
 
 /*

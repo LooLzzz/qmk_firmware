@@ -1,6 +1,5 @@
 # MCU name
 MCU = STM32F411
-BOARD = BLACKPILL_STM32_F411
 
 # Bootloader selection
 BOOTLOADER = stm32-dfu
@@ -20,3 +19,7 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 
 LAYOUTS = ortho_5x12
+
+OLED_ENABLE = yes
+OLED_DRIVER = SSD1306
+RAW_ENABLE = yes

@@ -25,6 +25,7 @@ bool encoder_read(void);
 
 bool encoder_update_kb(uint8_t index, bool clockwise);
 bool encoder_update_user(uint8_t index, bool clockwise);
+void encoder_insert_state(uint8_t index);
 
 #ifdef SPLIT_KEYBOARD
 
@@ -32,17 +33,17 @@ void encoder_state_raw(uint8_t* slave_state);
 void encoder_update_raw(uint8_t* slave_state);
 
 #    if defined(ENCODERS_PAD_A_RIGHT)
-#        define NUM_ENCODERS_LEFT ARRAY_SIZE(((pin_t[])ENCODERS_PAD_A))
-#        define NUM_ENCODERS_RIGHT ARRAY_SIZE(((pin_t[])ENCODERS_PAD_A_RIGHT))
+#        define NUM_ENCODERS_LEFT (sizeof(((pin_t[])ENCODERS_PAD_A)) / sizeof(pin_t))
+#        define NUM_ENCODERS_RIGHT (sizeof(((pin_t[])ENCODERS_PAD_A_RIGHT)) / sizeof(pin_t))
 #    else
-#        define NUM_ENCODERS_LEFT ARRAY_SIZE(((pin_t[])ENCODERS_PAD_A))
+#        define NUM_ENCODERS_LEFT (sizeof(((pin_t[])ENCODERS_PAD_A)) / sizeof(pin_t))
 #        define NUM_ENCODERS_RIGHT NUM_ENCODERS_LEFT
 #    endif
 #    define NUM_ENCODERS (NUM_ENCODERS_LEFT + NUM_ENCODERS_RIGHT)
 
 #else // SPLIT_KEYBOARD
 
-#    define NUM_ENCODERS ARRAY_SIZE(((pin_t[])ENCODERS_PAD_A))
+#    define NUM_ENCODERS (sizeof(((pin_t[])ENCODERS_PAD_A)) / sizeof(pin_t))
 #    define NUM_ENCODERS_LEFT NUM_ENCODERS
 #    define NUM_ENCODERS_RIGHT 0
 

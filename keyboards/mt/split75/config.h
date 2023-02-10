@@ -1,7 +1,10 @@
-// Copyright 2022 Artjoms Rizihs (@artjomsR)
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #pragma once
+
+#define VENDOR_ID       0x594D
+#define PRODUCT_ID      0x0001
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    YMDK
+#define PRODUCT         Split75
 
 /* matrix size */
 #define MATRIX_ROWS 8
@@ -12,18 +15,7 @@
 #define LED_SCROLL_LOCK_PIN D6
 
 #define RGBLED_NUM 8
-#define RGBLIGHT_EFFECT_BREATHING
-#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-#define RGBLIGHT_EFFECT_SNAKE
-#define RGBLIGHT_EFFECT_KNIGHT
-#define RGBLIGHT_EFFECT_CHRISTMAS
-#define RGBLIGHT_EFFECT_STATIC_GRADIENT
-#define RGBLIGHT_EFFECT_RGB_TEST
-#define RGBLIGHT_EFFECT_ALTERNATING
-#define RGBLIGHT_EFFECT_TWINKLE
+#define RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_SLEEP
 
 #define BACKLIGHT_PIN D4
-
-#define I2C_START_RETRY_COUNT 1

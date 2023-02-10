@@ -43,11 +43,7 @@
 #endif
 
 #ifndef ADNS9800_CS_PIN
-#    ifdef POINTING_DEVICE_CS_PIN
-#        define ADNS9800_CS_PIN POINTING_DEVICE_CS_PIN
-#    else
-#        error "No chip select pin defined -- missing POINTING_DEVICE_CS_PIN or ADNS9800_CS_PIN"
-#    endif
+#    error "No chip select pin defined -- missing ADNS9800_CS_PIN"
 #endif
 
 typedef struct {

@@ -28,6 +28,6 @@ void print_set_sendchar(sendchar_func_t send) {
     func = send;
 }
 
-void putchar_(char character) {
+void _putchar(char character) {
     func(character);
 }

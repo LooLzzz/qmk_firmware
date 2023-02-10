@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "BM60HSRGB_ISO Rev2",
-    "manufacturer": "KPRepublic",
+    "keyboard_name": "bm60v2_ISO",
     "url": "",
     "maintainer": "kp republic",
-    "usb": {
-        "vid": "0x4B50",
-        "pid": "0x1123",
-        "device_version": "0.0.2"
-    },
     "layouts": {
         "LAYOUT_60_iso_arrow": {
             "layout": [

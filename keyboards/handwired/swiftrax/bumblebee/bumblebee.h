@@ -16,7 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #pragma once
 
-#define XXX KC_NO
+#define KC_NO XXX
 
 #include "quantum.h"
 

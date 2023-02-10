@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "prophet",
-    "manufacturer": "westfoxtrot",
+    "keyboard_name": "Prophet",
     "url": "",
     "maintainer": "westfoxtrot",
-    "usb": {
-        "vid": "0xFF21",
-        "pid": "0xAA03",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

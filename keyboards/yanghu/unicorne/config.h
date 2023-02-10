@@ -18,6 +18,13 @@
 
 #include "config_common.h"
 
+/* USB Device descriptor parameter */
+#define VENDOR_ID 0xFEED
+#define PRODUCT_ID 0x0204
+#define DEVICE_VER 0x0001
+#define MANUFACTURER yanghu
+#define PRODUCT unicorne
+
 /* key matrix size */
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 12
@@ -46,11 +53,12 @@
 #define AUDIO_PWM_PAL_MODE 1
 #define AUDIO_PWM_DRIVER PWMD1
 #define AUDIO_PWM_CHANNEL 1
+#define AUDIO_STATE_TIMER GPTD4
 
 /* RGB LED */
 #define RGB_DI_PIN B1
 #define RGBLED_NUM 8
-#define RGB_MATRIX_LED_COUNT RGBLED_NUM
+#define DRIVER_LED_TOTAL RGBLED_NUM
 #define RGBLIGHT_EFFECT_BREATHING
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL

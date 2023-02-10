@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "II", 
-    "manufacturer": "Eagle",
+    "keyboard_name": "EagleII", 
     "url": "", 
     "maintainer": "Spaceman", 
-    "usb": {
-        "vid": "0xFEED",
-        "pid": "0x9789",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

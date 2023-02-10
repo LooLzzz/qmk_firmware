@@ -20,6 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+#define PRODUCT_ID  0x3537
+#define DEVICE_VER  0x0001
+#define PRODUCT     Tractyl Manuform(4x6)
+
 /* key matrix size */
 // Rows are doubled-up
 #define MATRIX_ROWS 10
@@ -33,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // WS2812 RGB LED strip input and number of LEDs
 #define RGB_DI_PIN       E7
-#define RGB_MATRIX_LED_COUNT 62
+#define DRIVER_LED_TOTAL 62
 #define RGB_MATRIX_SPLIT { 32, 30 }
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 #define RGB_MATRIX_KEYPRESSES
@@ -81,7 +85,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-/* PMW33XX Settings */
-#define PMW33XX_CS_PIN           B0
+/* PMW3360 Settings */
+#define PMW3360_CS_PIN           B0
 
 #define POINTING_DEVICE_RIGHT

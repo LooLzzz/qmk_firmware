@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Vertex",
-    "manufacturer": "kb_elmo",
+    "keyboard_name": "vertex",
     "url": "",
     "maintainer": "kb-elmo",
-    "usb": {
-        "vid": "0xA68C",
-        "pid": "0x6B47",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_8keys": {
             "layout": [

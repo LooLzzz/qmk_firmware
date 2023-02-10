@@ -1,6 +1,12 @@
+#----------------------------------------------------------------------------
+# make georgi:default:dfu
+# Make sure you have dfu-programmer installed!
+#----------------------------------------------------------------------------
+
 NO_REPEAT				 = yes
 VERBOSE					 = yes
 KEYBOARD_SHARED_EP       = yes
+CUSTOM_MATRIX			 = yes
 MOUSEKEY_ENABLE			 = yes
 
 #Debug options
@@ -14,6 +20,7 @@ ONLY_QWERTY				 = no
 # know what you're doing.
 #
 # No touchy, capiche?
+SRC += matrix.c i2c_master.c
 ifeq ($(strip $(DEBUG_MATRIX)), yes)
     OPT_DEFS += -DDEBUG_MATRIX
 endif
@@ -26,5 +33,3 @@ endif
 ifeq ($(strip $(ONLY_QWERTY)), yes)
     OPT_DEFS += -DONLYQWERTY
 endif
-
-SRC += sten.c

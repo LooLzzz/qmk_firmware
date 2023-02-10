@@ -1,6 +1,12 @@
 #include QMK_KEYBOARD_H
 #include "edvorakjp.h"
 
+/*
+ * enum custom_keycodes {
+ *   KC_LOCK = NEW_SAFE_RANGE,
+ * };
+ */
+
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 #define __KC_TRNS_x6__ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 
@@ -53,18 +59,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void matrix_init_keymap() {}
 
 #ifdef RGBLIGHT_EFFECT_STATIC_GRADIENT
-layer_state_t layer_state_set_keymap(layer_state_t state) {
+uint32_t layer_state_set_keymap(uint32_t state) {
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
-    switch (get_highest_layer(state)) {
+    switch (biton32(state)) {
         case L_EDVORAKJP_LOWER:
-            rgblight_sethsv_noeeprom(HSV_RED);
+            rgblight_sethsv_noeeprom_red();
             break;
         case L_EDVORAKJP_RAISE:
-            rgblight_sethsv_noeeprom(HSV_GREEN);
+            rgblight_sethsv_noeeprom_green();
             break;
         default:  // for any other layers, or the default layer
             rgblight_mode(RGBLIGHT_MODE_STATIC_GRADIENT + 3);
-            rgblight_sethsv(HSV_RED);
+            rgblight_sethsv_red();
             break;
     }
     return state;

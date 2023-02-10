@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "SuperLyra",
-    "manufacturer": "Dom",
+    "keyboard_name": "superlyra",
     "url": "",
     "maintainer": "malevolti",
-    "usb": {
-        "vid": "0x4443",
-        "pid": "0x4C53",
-        "device_version": "30.3.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

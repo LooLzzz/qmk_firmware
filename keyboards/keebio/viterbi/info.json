@@ -1,10 +1,7 @@
 {
-    "manufacturer": "Keebio",
+    "keyboard_name": "Viterbi",
     "url": "https://keeb.io",
     "maintainer": "nooges",
-    "usb": {
-        "vid": "0xCB10"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

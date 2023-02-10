@@ -19,6 +19,10 @@
 
 #include "config_common.h"
 
+/* USB Device descriptor parameter */
+#define VENDOR_ID 0xFEED
+#define MANUFACTURER Uthol
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 12

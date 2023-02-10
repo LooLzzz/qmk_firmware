@@ -1,6 +1,6 @@
 #pragma once
 
-#include "quantum.h"
+#include "dactyl_manuform.h"
 
 #define XXX KC_NO
 

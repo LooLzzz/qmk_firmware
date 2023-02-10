@@ -341,7 +341,7 @@ bool oled_task_user(void) {
 
 #ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    switch(get_highest_layer(layer_state)){
+    switch(biton32(layer_state)){
         case 1:
             if (clockwise) {
                 tap_code16(C(KC_TAB));

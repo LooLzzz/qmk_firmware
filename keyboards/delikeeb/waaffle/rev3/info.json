@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Waaffle rev3",
-    "manufacturer": "dELIKEEb",
+    "keyboard_name": "waaffle",
     "url": "",
     "maintainer": "noclew",
-    "usb": {
-        "vid": "0x9906",
-        "pid": "0x0012",
-        "device_version": "0.0.3"
-    },
     "layouts": {
         "LAYOUT_ortho_5x16": {
             "layout":

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "quantum.h"
+#include "dactyl_manuform.h"
 
 // This uses the same coordinate system as the program that defines
 // the case model, but not the same coordinates.

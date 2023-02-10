@@ -58,20 +58,14 @@ static bool spi_eeprom_start(void) {
 
 static spi_status_t spi_eeprom_wait_while_busy(int timeout) {
     uint32_t     deadline = timer_read32() + timeout;
-    spi_status_t response = SR_WIP;
-    while (response & SR_WIP) {
-        if (!spi_eeprom_start()) {
-            return SPI_STATUS_ERROR;
-        }
-
+    spi_status_t response;
+    do {
         spi_write(CMD_RDSR);
         response = spi_read();
-        spi_stop();
-
         if (timer_read32() >= deadline) {
             return SPI_STATUS_TIMEOUT;
         }
-    }
+    } while (response & SR_WIP);
     return SPI_STATUS_SUCCESS;
 }
 
@@ -111,21 +105,27 @@ void eeprom_driver_erase(void) {
 void eeprom_read_block(void *buf, const void *addr, size_t len) {
     //-------------------------------------------------
     // Wait for the write-in-progress bit to be cleared
-    spi_status_t response = spi_eeprom_wait_while_busy(EXTERNAL_EEPROM_SPI_TIMEOUT);
-    if (response != SPI_STATUS_SUCCESS) {
-        spi_stop();
+    bool res = spi_eeprom_start();
+    if (!res) {
+        dprint("failed to start SPI for WIP check\n");
         memset(buf, 0, len);
+        return;
+    }
+
+    spi_status_t response = spi_eeprom_wait_while_busy(EXTERNAL_EEPROM_SPI_TIMEOUT);
+    spi_stop();
+    if (response == SPI_STATUS_TIMEOUT) {
         dprint("SPI timeout for WIP check\n");
+        memset(buf, 0, len);
         return;
     }
 
     //-------------------------------------------------
     // Perform read
-    bool res = spi_eeprom_start();
+    res = spi_eeprom_start();
     if (!res) {
-        spi_stop();
-        memset(buf, 0, len);
         dprint("failed to start SPI for read\n");
+        memset(buf, 0, len);
         return;
     }
 
@@ -158,9 +158,15 @@ void eeprom_write_block(const void *buf, void *addr, size_t len) {
 
         //-------------------------------------------------
         // Wait for the write-in-progress bit to be cleared
+        res = spi_eeprom_start();
+        if (!res) {
+            dprint("failed to start SPI for WIP check\n");
+            return;
+        }
+
         spi_status_t response = spi_eeprom_wait_while_busy(EXTERNAL_EEPROM_SPI_TIMEOUT);
-        if (response != SPI_STATUS_SUCCESS) {
-            spi_stop();
+        spi_stop();
+        if (response == SPI_STATUS_TIMEOUT) {
             dprint("SPI timeout for WIP check\n");
             return;
         }
@@ -169,7 +175,6 @@ void eeprom_write_block(const void *buf, void *addr, size_t len) {
         // Enable writes
         res = spi_eeprom_start();
         if (!res) {
-            spi_stop();
             dprint("failed to start SPI for write-enable\n");
             return;
         }
@@ -181,7 +186,6 @@ void eeprom_write_block(const void *buf, void *addr, size_t len) {
         // Perform the write
         res = spi_eeprom_start();
         if (!res) {
-            spi_stop();
             dprint("failed to start SPI for write\n");
             return;
         }

@@ -50,7 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_TRNS,         KC_TRNS,  KC_TRNS,                        KC_TAB,                                 KC_TRNS, KC_TRNS ),
 };
 
-bool rgb_matrix_indicators_user(void) {
+void rgb_matrix_indicators_user(void)
+{
         if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK))
         {
             rgb_matrix_set_color(22, 255, 255, 255);
@@ -63,5 +64,4 @@ bool rgb_matrix_indicators_user(void) {
         {
             rgb_matrix_set_color(45, 255, 255, 255);
         }
-    return false;
 }

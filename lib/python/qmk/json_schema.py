@@ -10,18 +10,7 @@ import jsonschema
 from milc import cli
 
 
-def _dict_raise_on_duplicates(ordered_pairs):
-    """Reject duplicate keys."""
-    d = {}
-    for k, v in ordered_pairs:
-        if k in d:
-            raise ValueError("duplicate key: %r" % (k,))
-        else:
-            d[k] = v
-    return d
-
-
-def json_load(json_file, strict=True):
+def json_load(json_file):
     """Load a json file from disk.
 
     Note: file must be a Path object.
@@ -31,7 +20,7 @@ def json_load(json_file, strict=True):
         # Not necessary if the data is provided via stdin
         if isinstance(json_file, Path):
             json_file = json_file.open(encoding='utf-8')
-        return hjson.load(json_file, object_pairs_hook=_dict_raise_on_duplicates if strict else None)
+        return hjson.load(json_file)
 
     except (json.decoder.JSONDecodeError, hjson.HjsonDecodeError) as e:
         cli.log.error('Invalid JSON encountered attempting to load {fg_cyan}%s{fg_reset}:\n\t{fg_red}%s', json_file, e)
@@ -79,7 +68,11 @@ def create_validator(schema):
     schema_store = compile_schema_store()
     resolver = jsonschema.RefResolver.from_schema(schema_store[schema], store=schema_store)
 
-    return jsonschema.Draft202012Validator(schema_store[schema], resolver=resolver).validate
+    # TODO: Remove this after the jsonschema>=4 requirement had time to reach users
+    try:
+        return jsonschema.Draft202012Validator(schema_store[schema], resolver=resolver).validate
+    except AttributeError:
+        return jsonschema.Draft7Validator(schema_store[schema], resolver=resolver).validate
 
 
 def validate(data, schema):

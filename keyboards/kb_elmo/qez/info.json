@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "QEZ",
-    "manufacturer": "kb_elmo",
+    "keyboard_name": "qez",
     "url": "",
     "maintainer": "kb-elmo<mail@elmo.space>",
-    "usb": {
-        "vid": "0xA68C",
-        "pid": "0x675F",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_split_space": {
             "layout": [

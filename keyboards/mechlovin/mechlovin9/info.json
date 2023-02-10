@@ -1,10 +1,7 @@
 {
-    "manufacturer": "Mechlovin Studio",
+    "keyboard_name": "mechlovin9",
     "url": "",
     "maintainer": "Team Mechlovin",
-    "usb": {
-        "vid": "0x4D4C"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

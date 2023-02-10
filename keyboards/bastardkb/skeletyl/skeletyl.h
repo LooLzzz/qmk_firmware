@@ -1,6 +1,5 @@
 /*
  * Copyright 2021 Quentin LEBASTARD <qlebastard@gmail.com>
- * Copyright 2022 Charly DELAY <charly@codesink.dev>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +16,6 @@
  */
 
 #pragma once
-
 #include "quantum.h"
 
 // clang-format off

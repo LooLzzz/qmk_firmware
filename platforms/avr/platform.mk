@@ -24,7 +24,6 @@ COMPILEFLAGS += -fdata-sections
 COMPILEFLAGS += -fpack-struct
 COMPILEFLAGS += -fshort-enums
 COMPILEFLAGS += -mcall-prologues
-COMPILEFLAGS += -fno-builtin-printf
 
 # Linker relaxation is only possible if
 # link time optimizations are not enabled.
@@ -39,7 +38,7 @@ CFLAGS += -fno-inline-small-functions
 CFLAGS += -fno-strict-aliasing
 
 CXXFLAGS += $(COMPILEFLAGS)
-CXXFLAGS += -fno-exceptions $(CXXSTANDARD)
+CXXFLAGS += -fno-exceptions -std=c++11
 
 LDFLAGS += -Wl,--gc-sections
 

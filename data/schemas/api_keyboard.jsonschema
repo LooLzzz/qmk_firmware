@@ -9,6 +9,7 @@
                     "properties": {
                         "url": {"type": "string"}
                     }
+
                 },
                 "parse_errors": {"$ref": "qmk.definitions.v1#/string_array"},
                 "parse_warnings": {"$ref": "qmk.definitions.v1#/string_array"},

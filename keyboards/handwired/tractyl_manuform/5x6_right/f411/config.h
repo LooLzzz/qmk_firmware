@@ -18,11 +18,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define PRODUCT Tractyl Manuform(5x6) BlackPill
+
 // wiring of each half
 #define MATRIX_COL_PINS \
     { A15, B3, B4, B5, B6, B7 }
 #define MATRIX_ROW_PINS \
     { B12, B13, B14, B15, A8, A10 }
+
+#define UNUSED_PINS \
+    { C15 }
 
 #define DIODE_DIRECTION     COL2ROW
 
@@ -53,6 +58,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define AUDIO_PWM_DRIVER   PWMD3
 #define AUDIO_PWM_CHANNEL  4
 #define AUDIO_PWM_PAL_MODE 2
+#define AUDIO_STATE_TIMER  GPTD4
 
 /* serial.c configuration for split keyboard */
 #define SERIAL_USART_FULL_DUPLEX  // Enable full duplex operation mode.
@@ -74,7 +80,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define I2C1_SCL_PAL_MODE 4
 #define I2C1_SDA_PAL_MODE 4
 #define I2C1_CLOCK_SPEED  400000
-#define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_16_9
+#define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_2
 
 /* encoder config */
 #define ENCODERS_PAD_A \
@@ -96,4 +102,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EXTERNAL_EEPROM_SPI_CLOCK_DIVISOR    64
 
 /* pmw3360 config  */
-#define PMW33XX_CS_PIN                       B0
+#define PMW3360_CS_PIN                       B0
+#define PMW3360_SPI_MODE                     3
+#define PMW3360_SPI_DIVISOR                  64
+#define PMW3360_FIRMWARE_UPLOAD_FAST

@@ -18,6 +18,13 @@
 
 #include "config_common.h"
 
+/* USB Device descriptor paramater */
+#define VENDOR_ID       0x20A0   // 
+#define PRODUCT_ID      0x0B87  // B87
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    Winkeyless
+#define PRODUCT         B87 // QMK PORT
+
 /* Define Matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 15

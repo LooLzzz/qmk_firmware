@@ -47,6 +47,7 @@ endif
 COMMAND_ENABLE = no
 CONSOLE_ENABLE = no
 MOUSEKEY_ENABLE = no
+TERMINAL_ENABLE = no
 
 # Disable unwanted hardware options on all keyboards. (Some keyboards turn
 # these features on by default even though they aren't actually required.)

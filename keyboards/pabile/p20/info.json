@@ -1,11 +1,7 @@
 {
-    "manufacturer": "Pabile",
+    "keyboard_name": "P20",
     "url": "",
     "maintainer": "pabile",
-    "usb": {
-        "vid": "0x6666",
-        "pid": "0x6667"
-    },
     "layouts": {
         "LAYOUT_ortho_5x4": {
             "layout": [

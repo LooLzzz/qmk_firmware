@@ -1,23 +1,25 @@
-// Copyright 2022 Joshua Diamond josh@windowoffire.com (@spidey3)
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #pragma once
 
 #include QMK_KEYBOARD_H
 
 #ifdef UNICODEMAP_ENABLE
-#    include "spidey3_unicode.h"
+#    include "unicode.h"
 #endif
 
 enum userspace_layers {
     _BASE = 0,
     _NUMPAD,
     _FN,
-    _GLYPH,
 };
 
 enum custom_keycodes {
-    CH_SUSP = SAFE_RANGE,  // Suspend
+    SPI_GLO = SAFE_RANGE,
+    SPI_LNX,  // Mode: Linux
+    SPI_OSX,  // Mode: Mac
+    SPI_WIN,  // Mode: Windows
+    CH_CPNL,  // AL Control Panel
+    CH_ASST,  // AL Context-aware Desktop Assistant
+    CH_SUSP,  // Suspend
 
     SPI_NORMAL,
     SPI_WIDE,
@@ -27,11 +29,8 @@ enum custom_keycodes {
     SPI_SQUARE,
     SPI_PARENS,
     SPI_FRAKTR,
-    SPI_BOLD,
-    SPI_MATH,
     SPI_GFLOCK,
     SPI_KP_00,
-    SPI_GLO,
 };
 
 #ifdef RGBLIGHT_ENABLE
@@ -51,6 +50,7 @@ typedef enum layer_ack {
 
 #    define RGB_LAYER_ACK_DURATION 500
 
+void          eeconfig_init_user_rgb(void);
 void          matrix_init_user_rgb(void);
 void          matrix_scan_user_rgb(void);
 void          keyboard_post_init_user_rgb(void);
@@ -63,11 +63,6 @@ void          rgb_layer_ack(layer_ack_t n);
 void          rgb_layer_ack_yn(bool yn);
 void          clear_rgb_layers(void);
 void          shutdown_user_rgb(void);
-
-#    if defined(UNICODE_COMMON_ENABLE)
-void unicode_input_mode_set_user_rgb(uint8_t input_mode);
-#    endif
-
 #endif
 
 #ifdef UNICODEMAP_ENABLE

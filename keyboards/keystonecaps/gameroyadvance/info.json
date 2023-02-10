@@ -1,13 +1,7 @@
 {
     "keyboard_name": "Game Roy ADVANCE",
-    "manufacturer": "Keystone Caps",
-    "url": "https://keystonecaps.store/?product=game-roy-advance-game-pad-group-buy-preorder",
     "maintainer": "@RoyMeetsWorld",
-    "usb": {
-        "vid": "0xFEED",
-        "pid": "0x6060",
-        "device_version": "0.0.1"
-    },
+    "url": "https://keystonecaps.store/?product=game-roy-advance-game-pad-group-buy-preorder",
     "layouts": {
         "LAYOUT": {
             "layout": [

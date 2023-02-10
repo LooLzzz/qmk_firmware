@@ -4,7 +4,6 @@
   "maintainer": "xia0",
   "debounce": 5,
   "processor": "atmega32u4",
-  "bootloader": "atmel-dfu",
   "diode_direction": "COL2ROW",
   "features": {
     "audio": false,

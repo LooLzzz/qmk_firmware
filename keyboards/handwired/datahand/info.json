@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "DataHand",
-    "manufacturer": "DataHand",
+    "keyboard_name": "Handwired DataHand",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x13BA",
-        "pid": "0x0017",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

@@ -7,7 +7,8 @@
         "**/.build": true,
         "**/*.hex": true,
         "**/*.bin": true,
-        "**/*.uf2": true
+        "keyboards/[^k]*": true,
+        "keyboards/k[^e]*": true
     },
     "files.associations": {
         "*.h": "c",
@@ -26,6 +27,18 @@
     },
     "python.formatting.provider": "yapf",
     "[json]": {
-	    "editor.formatOnSave": false
+        "editor.formatOnSave": false
+    },
+
+    "terminal.integrated.defaultProfile.windows": "QMK_MSYS",
+    "terminal.integrated.profiles.windows": {
+        "QMK_MSYS": {
+            "path": "C:/QMK_MSYS/usr/bin/bash.exe",
+            "env": {
+                "MSYSTEM": "MINGW64",
+                "CHERE_INVOKING": "1"
+            },
+            "args": ["--login"]
+        }
     }
 }

@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "SkeletonNumPad",
-    "manufacturer": "SkeletonKBD",
+    "keyboard_name": "skeletonnumpad",
     "url": "https://github.com/skeletonkbd/SkeletonNumPad",
     "maintainer": "skeletonkbd",
-    "usb": {
-        "vid": "0x736C",
-        "pid": "0x6E70",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_numpad_5x4": {
             "layout": [

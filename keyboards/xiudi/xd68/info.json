@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "XD68",
-    "manufacturer": "xiudi",
+    "keyboard_name": "xd68",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x7844",
-        "pid": "0x6868",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_65_ansi": {
             "layout": [

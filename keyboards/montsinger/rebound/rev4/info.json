@@ -1,13 +1,7 @@
 {
-    "keyboard":"Rebound Rev4",
-    "manufacturer": "Montsinger",
+    "keyboard":"montsinger/rebound/rev4",
     "url": "https://montsinger.net",
     "maintainer": "rossman360",
-    "usb": {
-        "vid": "0x524D",
-        "pid": "0x0001",
-        "device_version": "0.0.2"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

@@ -1,13 +1,7 @@
 {
     "keyboard_name": "XT8x",
-    "manufacturer": "kopibeng",
-    "url": "",
     "maintainer": "kopibeng",
-    "usb": {
-        "vid": "0x4B50",
-        "pid": "0x8788",
-        "device_version": "0.0.1"
-    },
+    "url": "",
     "layouts": {
         "LAYOUT_all": {
             "layout": [

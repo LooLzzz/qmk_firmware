@@ -1,13 +1,7 @@
 {
     "keyboard_name": "pizza65",
-    "manufacturer": "pizzakeyboards",
     "url": "www.keyboards.pizza",
     "maintainer": "mm0nte",
-    "usb": {
-        "vid": "0x504B",
-        "pid": "0x707A",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_65_ansi_blocker": {
             "layout": [
@@ -115,7 +109,8 @@
                 {"label": "r2_11", "x": 10.5, "y": 1},
                 {"label": "r2_12", "x": 11.5, "y": 1},
                 {"label": "r2_13", "x": 12.5, "y": 1},
-                {"label": "r2_14", "x": 15, "y": 1},
+                {"label": "r2_14", "x": 13.5, "y": 1},
+                {"label": "r2_15", "x": 15, "y": 1},
 
                 {"label": "r3_01", "x": 0, "y": 2, "w": 1.75},
                 {"label": "r3_02", "x": 1.75, "y": 2},
@@ -132,6 +127,7 @@
                 {"label": "r3_13", "x": 12.75, "y": 2},
                 {"label": "r3_14", "x": 13.75, "y": 1, "w":1.25, "h":2},
                 {"label": "r3_15", "x": 15, "y": 2},
+
 
                 {"label": "r4_01", "x": 0, "y": 3, "w": 1.25},
                 {"label": "r4_02", "x": 1.25, "y": 3},
@@ -160,7 +156,7 @@
                 {"label": "r4_09", "x": 15, "y": 4}
             ]
         },
-        "LAYOUT_65_ansi_blocker_split_bs": {
+        "LAYOUT_65_ansi_blocker_doublebs": {
             "layout": [
                 {"label": "r1_01", "x": 0, "y": 0},
                 {"label": "r1_02", "x": 1, "y": 0},
@@ -236,7 +232,7 @@
                 {"label": "r4_09", "x": 15, "y": 4}
             ]
         },
-        "LAYOUT_65_iso_blocker_split_bs": {
+        "LAYOUT_65_iso_blocker_doublebs": {
             "layout": [
                 {"label": "r1_01", "x": 0, "y": 0},
                 {"label": "r1_02", "x": 1, "y": 0},
@@ -268,7 +264,7 @@
                 {"label": "r2_11", "x": 10.5, "y": 1},
                 {"label": "r2_12", "x": 11.5, "y": 1},
                 {"label": "r2_13", "x": 12.5, "y": 1},
-                {"label": "r2_14", "x": 15, "y": 1},
+                {"label": "r2_15", "x": 15, "y": 1},
 
                 {"label": "r3_01", "x": 0, "y": 2, "w": 1.75},
                 {"label": "r3_02", "x": 1.75, "y": 2},
@@ -285,6 +281,7 @@
                 {"label": "r3_13", "x": 12.75, "y": 2},
                 {"label": "r3_14", "x": 13.75, "y": 1, "w":1.25, "h":2},
                 {"label": "r3_15", "x": 15, "y": 2},
+
 
                 {"label": "r4_01", "x": 0, "y": 3, "w": 1.25},
                 {"label": "r4_02", "x": 1.25, "y": 3},

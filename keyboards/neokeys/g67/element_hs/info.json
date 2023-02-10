@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Element G67 Hotswap",
-    "manufacturer": "NEO Keys",
+    "keyboard_name": "NEO Keys Element Hotswap",
     "url": "",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x4E4B",
-        "pid": "0x5049",
-        "device_version": "1.0.0"
-    },
     "layouts": {
         "LAYOUT_65_ansi_blocker": {
             "layout": [

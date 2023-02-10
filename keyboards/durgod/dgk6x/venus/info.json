@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "DURGOD Venus (QMK)",
-  "manufacturer": "Hoksi Technology",
+  "keyboard_name": "DURGOD Venus",
   "url": "https://www.amazon.com/dp/B07XFP5MMZ",
   "maintainer": "J-Sully",
-  "usb": {
-      "vid": "0xD60D",
-      "pid": "0x7EC5",
-      "device_version": "0.0.1"
-  },
     "layouts": {
         "LAYOUT_60_ansi": {
             "layout": [

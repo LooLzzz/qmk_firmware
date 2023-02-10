@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "SP_Mini",
-    "manufacturer": "Viktus Design LLC",
+    "keyboard_name": "sp_mini",
     "url": "",
     "maintainer": "jrfhoutx",
-    "usb": {
-        "vid": "0x5644",
-        "pid": "0x534D",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

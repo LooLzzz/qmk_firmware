@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "75H",
-    "manufacturer": "Mode",
+    "keyboard_name": "Mode 75H",
     "url": "",
     "maintainer": "Gondolindrim",
-    "usb": {
-        "vid": "0x00DE",
-        "pid": "0x7572",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

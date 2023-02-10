@@ -15,7 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "quantum.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
+#include "hal.h"
+#include "timer.h"
+#include "wait.h"
+#include "debug.h"
+#include "matrix.h"
 
 /*
  *     col: { B11, B10, B2, B1, A7, B0 }
@@ -31,13 +38,9 @@ __attribute__((weak)) void matrix_init_user(void) {}
 
 __attribute__((weak)) void matrix_scan_user(void) {}
 
-__attribute__((weak)) void matrix_init_kb(void) {
-    matrix_init_user();
-}
+__attribute__((weak)) void matrix_init_kb(void) { matrix_init_user(); }
 
-__attribute__((weak)) void matrix_scan_kb(void) {
-    matrix_scan_user();
-}
+__attribute__((weak)) void matrix_scan_kb(void) { matrix_scan_user(); }
 
 void matrix_init(void) {
     dprintf("matrix init\n");
@@ -143,13 +146,9 @@ uint8_t matrix_scan(void) {
     return 1;
 }
 
-bool matrix_is_on(uint8_t row, uint8_t col) {
-    return (matrix[row] & (1 << col));
-}
+bool matrix_is_on(uint8_t row, uint8_t col) { return (matrix[row] & (1 << col)); }
 
-matrix_row_t matrix_get_row(uint8_t row) {
-    return matrix[row];
-}
+matrix_row_t matrix_get_row(uint8_t row) { return matrix[row]; }
 
 void matrix_print(void) {
     dprintf("\nr/c 01234567\n");

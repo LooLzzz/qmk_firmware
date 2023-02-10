@@ -1,13 +1,7 @@
 {
     "keyboard_name": "XT60",
-    "manufacturer": "kopibeng",
-    "url": "",
     "maintainer": "Kopibeng",
-    "usb": {
-        "vid": "0x4B50",
-        "pid": "0x0600",
-        "device_version": "0.0.2"
-    },
+    "url": "",
     "layouts": {
         "LAYOUT_all": {
             "layout": [

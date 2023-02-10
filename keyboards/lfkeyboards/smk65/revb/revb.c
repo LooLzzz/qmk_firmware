@@ -74,7 +74,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
     if (click_toggle && record->event.pressed){
         click(click_hz, click_time);
     }
-    if (keycode == QK_BOOT) {
+    if (keycode == RESET) {
         reset_keyboard_kb();
     } else {
     }

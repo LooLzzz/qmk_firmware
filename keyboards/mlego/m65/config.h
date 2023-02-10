@@ -19,6 +19,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+#define VENDOR_ID 0xBABA
+#define MANUFACTURER Alin Elena
+#define PRODUCT m65
+
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 13
 

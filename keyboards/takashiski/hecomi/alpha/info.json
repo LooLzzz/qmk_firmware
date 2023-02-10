@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "hecomi_alpha",
-  "manufacturer": "takashiski",
+  "keyboard_name": "hecomi/alpha",
   "url": "https://skyhigh-works.hatenablog.com/entry/2019/02/25/221959",
   "maintainer": "takashiski",
-  "usb": {
-    "vid": "0xFEED",
-    "pid": "0x0000",
-    "device_version": "0.0.1"
-  },
   "layouts": {
     "LAYOUT": {
       "layout": [

@@ -1,6 +1,6 @@
 # Keychron Q0
 
-A customizable number keypad.
+This is 21 keys keypad.
 
 * Keyboard Maintainer: [Keychron](https://github.com/keychron)
 * Hardware Supported: Keychron Q0
@@ -8,11 +8,11 @@ A customizable number keypad.
 
 Make example for this keyboard (after setting up your build environment):
 
-    make keychron/q0/rev_0130:default
+    make keychron/q0/rev_0100:default
 
 Flashing example for this keyboard:
 
-    make keychron/q0/rev_0130:default:flash
+    make keychron/q0/rev_0100:default:flash
 
 **Reset Key**: Hold down the key located at *K00*, commonly programmed as *Esc* while plugging in the keyboard.
 

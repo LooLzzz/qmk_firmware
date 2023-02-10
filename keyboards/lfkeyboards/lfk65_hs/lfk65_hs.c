@@ -6,7 +6,7 @@
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 {
-    if (keycode == QK_BOOT) {
+    if (keycode == RESET) {
         reset_keyboard_kb();
     } else {
     }

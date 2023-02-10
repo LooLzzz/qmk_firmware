@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "KBDPAD Mk. I",
-    "manufacturer": "KBDfans",
+    "keyboard_name": "KBDfans KBDPad MKI",
     "url": "https://kbdfans.com/products/kbdfans-pad-custom-mechanical-keyboard-diy-kit",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0x20A0",
-        "pid": "0x422D",
-        "device_version": "2.0.0"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

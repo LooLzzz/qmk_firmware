@@ -38,7 +38,7 @@ extern uint32_t __ram0_end__;
 #    endif
 
 #    ifndef STM32_BOOTLOADER_DUAL_BANK_DELAY
-#        define STM32_BOOTLOADER_DUAL_BANK_DELAY 100
+#        define STM32_BOOTLOADER_DUAL_BANK_DELAY 100000
 #    endif
 
 __attribute__((weak)) void bootloader_jump(void) {
@@ -55,7 +55,7 @@ __attribute__((weak)) void bootloader_jump(void) {
 #    endif
 
     // Wait for a while for the capacitor to charge
-    wait_ms(STM32_BOOTLOADER_DUAL_BANK_DELAY);
+    wait_ms(100);
 
     // Issue a system reset to get the ROM bootloader to execute, with BOOT0 high
     NVIC_SystemReset();

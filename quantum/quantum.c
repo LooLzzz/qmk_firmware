@@ -93,25 +93,14 @@ __attribute__((weak)) void unregister_code16(uint16_t code) {
     }
 }
 
-/** \brief Tap a keycode with a delay.
- *
- * \param code The modded keycode to tap.
- * \param delay The amount of time in milliseconds to leave the keycode registered, before unregistering it.
- */
-__attribute__((weak)) void tap_code16_delay(uint16_t code, uint16_t delay) {
+__attribute__((weak)) void tap_code16(uint16_t code) {
     register_code16(code);
-    for (uint16_t i = delay; i > 0; i--) {
-        wait_ms(1);
+    if (code == KC_CAPS_LOCK) {
+        wait_ms(TAP_HOLD_CAPS_DELAY);
+    } else if (TAP_CODE_DELAY > 0) {
+        wait_ms(TAP_CODE_DELAY);
     }
     unregister_code16(code);
-}
-
-/** \brief Tap a keycode with the default delay.
- *
- * \param code The modded keycode to tap. If `code` is `KC_CAPS_LOCK`, the delay will be `TAP_HOLD_CAPS_DELAY`, otherwise `TAP_CODE_DELAY`, if defined.
- */
-__attribute__((weak)) void tap_code16(uint16_t code) {
-    tap_code16_delay(code, code == KC_CAPS_LOCK ? TAP_HOLD_CAPS_DELAY : TAP_CODE_DELAY);
 }
 
 __attribute__((weak)) bool process_action_kb(keyrecord_t *record) {
@@ -225,7 +214,7 @@ bool process_record_quantum(keyrecord_t *record) {
     uint16_t keycode = get_record_keycode(record, true);
 
     // This is how you use actions here
-    // if (keycode == QK_LEADER) {
+    // if (keycode == KC_LEAD) {
     //   action_t action;
     //   action.code = ACTION_DEFAULT_LAYER_SET(0);
     //   process_action(record, action);
@@ -251,11 +240,7 @@ bool process_record_quantum(keyrecord_t *record) {
 #endif
 
 #ifdef TAP_DANCE_ENABLE
-    if (preprocess_tap_dance(keycode, record)) {
-        // The tap dance might have updated the layer state, therefore the
-        // result of the keycode lookup might change.
-        keycode = get_record_keycode(record, true);
-    }
+    preprocess_tap_dance(keycode, record);
 #endif
 
     if (!(
@@ -275,9 +260,6 @@ bool process_record_quantum(keyrecord_t *record) {
 #endif
 #if defined(VIA_ENABLE)
             process_record_via(keycode, record) &&
-#endif
-#if defined(POINTING_DEVICE_ENABLE) && defined(POINTING_DEVICE_AUTO_MOUSE_ENABLE)
-            process_auto_mouse(keycode, record) &&
 #endif
             process_record_kb(keycode, record) &&
 #if defined(SECURE_ENABLE)
@@ -307,20 +289,26 @@ bool process_record_quantum(keyrecord_t *record) {
 #ifdef TAP_DANCE_ENABLE
             process_tap_dance(keycode, record) &&
 #endif
-#ifdef CAPS_WORD_ENABLE
-            process_caps_word(keycode, record) &&
-#endif
 #if defined(UNICODE_COMMON_ENABLE)
             process_unicode_common(keycode, record) &&
 #endif
 #ifdef LEADER_ENABLE
             process_leader(keycode, record) &&
 #endif
+#ifdef PRINTING_ENABLE
+            process_printer(keycode, record) &&
+#endif
 #ifdef AUTO_SHIFT_ENABLE
             process_auto_shift(keycode, record) &&
 #endif
 #ifdef DYNAMIC_TAPPING_TERM_ENABLE
             process_dynamic_tapping_term(keycode, record) &&
+#endif
+#ifdef TERMINAL_ENABLE
+            process_terminal(keycode, record) &&
+#endif
+#ifdef CAPS_WORD_ENABLE
+            process_caps_word(keycode, record) &&
 #endif
 #ifdef SPACE_CADET_ENABLE
             process_space_cadet(keycode, record) &&
@@ -339,9 +327,6 @@ bool process_record_quantum(keyrecord_t *record) {
 #endif
 #ifdef PROGRAMMABLE_BUTTON_ENABLE
             process_programmable_button(keycode, record) &&
-#endif
-#ifdef AUTOCORRECT_ENABLE
-            process_autocorrect(keycode, record) &&
 #endif
             true)) {
         return false;
@@ -368,37 +353,35 @@ bool process_record_quantum(keyrecord_t *record) {
 #endif
                 return false;
             case QK_CLEAR_EEPROM:
-#ifdef NO_RESET
                 eeconfig_init();
-#else
-                eeconfig_disable();
+#ifndef NO_RESET
                 soft_reset_keyboard();
 #endif
                 return false;
 #ifdef VELOCIKEY_ENABLE
-            case QK_VELOCIKEY_TOGGLE:
+            case VLK_TOG:
                 velocikey_toggle();
                 return false;
 #endif
 #ifdef BLUETOOTH_ENABLE
-            case QK_OUTPUT_AUTO:
+            case OUT_AUTO:
                 set_output(OUTPUT_AUTO);
                 return false;
-            case QK_OUTPUT_USB:
+            case OUT_USB:
                 set_output(OUTPUT_USB);
                 return false;
-            case QK_OUTPUT_BLUETOOTH:
+            case OUT_BT:
                 set_output(OUTPUT_BLUETOOTH);
                 return false;
 #endif
 #ifndef NO_ACTION_ONESHOT
-            case QK_ONE_SHOT_TOGGLE:
+            case ONESHOT_TOGGLE:
                 oneshot_toggle();
                 break;
-            case QK_ONE_SHOT_ON:
+            case ONESHOT_ENABLE:
                 oneshot_enable();
                 break;
-            case QK_ONE_SHOT_OFF:
+            case ONESHOT_DISABLE:
                 oneshot_disable();
                 break;
 #endif
@@ -419,14 +402,7 @@ bool process_record_quantum(keyrecord_t *record) {
                 } else {
                     SEND_STRING_DELAY(" compile ", TAP_CODE_DELAY);
                 }
-#    if defined(CONVERTER_ENABLED)
-                SEND_STRING_DELAY("-kb " QMK_KEYBOARD " -km " QMK_KEYMAP " -e CONVERT_TO=" CONVERTER_TARGET SS_TAP(X_ENTER), TAP_CODE_DELAY);
-#    else
                 SEND_STRING_DELAY("-kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER), TAP_CODE_DELAY);
-#    endif
-                if (temp_mod & MOD_MASK_SHIFT && temp_mod & MOD_MASK_CTRL) {
-                    reset_keyboard();
-                }
             }
 #endif
         }

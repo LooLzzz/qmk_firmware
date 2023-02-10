@@ -32,7 +32,7 @@
 #define AUTO_SHIFT_SPECIAL          \
              KC_TAB:                \
         case KC_MINUS ... KC_SLASH: \
-        case KC_NONUS_BACKSLASH
+        case KC_NONUS_BSLASH
 // clang-format on
 
 bool process_auto_shift(uint16_t keycode, keyrecord_t *record);

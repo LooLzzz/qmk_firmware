@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "SG81M",
-    "manufacturer": "Sam",
+    "keyboard_name": "sam sg81m",
     "url": "",
     "maintainer": "CMMS-Freather",
-    "usb": {
-        "vid": "0x534D",
-        "pid": "0x3831",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_7u_space": {
             "layout": [

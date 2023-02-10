@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Southpaw Fullsize", 
-    "manufacturer": "Switchplate Peripherals",
+    "keyboard_name": "southpaw_fullsize", 
     "url": "", 
     "maintainer": "ai03", 
-    "usb": {
-        "vid": "0xA103",
-        "pid": "0x0017",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

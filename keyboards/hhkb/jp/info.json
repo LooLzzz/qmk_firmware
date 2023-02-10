@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "JP",
-  "manufacturer": "HHKB",
+  "keyboard_name": "HHKB JP",
   "url": "",
   "maintainer": "qmk",
-  "usb": {
-    "vid": "0x4848",
-    "pid": "0x0002",
-    "device_version": "1.0.4"
-  },
   "layouts": {
     "LAYOUT_jp": {
       "layout": [

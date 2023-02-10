@@ -1,13 +1,7 @@
 {
     "keyboard_name": "For Science",
-    "manufacturer": "Peej",
     "url": "https://github.com/peej/for-science-keyboard",
     "maintainer": "qmk",
-    "usb": {
-        "vid": "0xFEED",
-        "pid": "0xF22C",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_split_4x5_3": {
             "layout": [

@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Splitish",
-    "manufacturer": "Reid Schneyer",
+    "keyboard_name": "splitish",
     "url": "",
     "maintainer": "RSchneyer",
-    "usb": {
-        "vid": "0xFEED",
-        "pid": "0x6464",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

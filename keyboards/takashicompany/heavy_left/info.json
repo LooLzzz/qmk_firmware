@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "Heavy Left",
-    "manufacturer": "takashicompany",
+    "keyboard_name": "heavy_left",
     "url": "",
     "maintainer": "takashicompany",
-    "usb": {
-        "vid": "0x7463",
-        "pid": "0x0015",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT": {
             "layout": [

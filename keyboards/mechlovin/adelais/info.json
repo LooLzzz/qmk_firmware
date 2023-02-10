@@ -1,11 +1,7 @@
 {
-    "manufacturer": "Team.Mechlovin",
+    "keyboard_name": "Adelais",
     "url": "",
     "maintainer": "mechlovin",
-    "usb": {
-        "vid": "0x4D4C",
-        "device_version": "0.0.1"
-    },
     "layout_aliases": {
         "LAYOUT_all": "LAYOUT_alice_split_bs"
     },

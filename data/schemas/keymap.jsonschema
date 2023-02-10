@@ -1,14 +1,10 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "qmk.keymap.v1",
     "title": "Keymap Information",
     "type": "object",
     "properties": {
         "author": {"type": "string"},
-        "converter": {
-            "type": "string",
-            "enum": ["elite_pi", "proton_c", "kb2040", "promicro_rp2040", "blok", "bit_c_pro", "stemcell", "bonsai_c4"]
-        },
         "host_language": {"$ref": "qmk.definitions.v1#/text_identifier"},
         "keyboard": {"$ref": "qmk.definitions.v1#/text_identifier"},
         "keymap": {"$ref": "qmk.definitions.v1#/text_identifier"},
@@ -35,7 +31,7 @@
                             "properties": {
                                 "action": {
                                     "type": "string",
-                                    "enum": ["beep", "delay", "down", "tap", "up"]
+                                    "enum": ['beep', 'delay', 'down', 'tap', 'up']
                                 },
                                 "keycodes": {
                                     "type": "array",
@@ -54,7 +50,8 @@
         },
         "config": {"$ref": "qmk.keyboard.v1"},
         "notes": {
-            "type": "string"
+            "type": "string",
+            "description": "asdf"
         }
     },
     "required": [

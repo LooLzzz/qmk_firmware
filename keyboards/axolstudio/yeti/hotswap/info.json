@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Yeti Hotswap",
-  "manufacturer": "Axolstudio",
+  "keyboard_name": "yeti hotswap",
   "url": "https://axolstudio.ca/yeti",
   "maintainer": "kb-elmo",
-  "usb": {
-    "vid": "0x525C",
-    "pid": "0x9F9E",
-    "device_version": "0.0.1"
-  },
   "layouts": {
     "LAYOUT": {
       "layout": [

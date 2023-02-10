@@ -18,6 +18,11 @@
 
 #include "config_common.h"
 
+#define VENDOR_ID    0x1209
+#define PRODUCT_ID   0x3270
+#define MANUFACTURER IBM
+#define PRODUCT      Model M PC/3270 122 key
+
 // Both controllers draw 100 mA or less
 #define USB_MAX_POWER_CONSUMPTION 100
 

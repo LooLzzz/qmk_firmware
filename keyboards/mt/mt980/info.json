@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "MT980",
-  "manufacturer": "Wheat Field Peripherals",
+  "keyboard_name": "mt980",
   "url": "https://shop110310565.taobao.com",
   "maintainer": "walkerstop",
-  "usb": {
-    "vid": "0xFEED",
-    "pid": "0x6060",
-    "device_version": "0.0.1"
-  },
   "layouts": {
     "LAYOUT": {
       "layout": [

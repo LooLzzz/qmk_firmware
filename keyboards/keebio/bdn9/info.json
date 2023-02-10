@@ -1,10 +1,7 @@
 {
-  "manufacturer": "Keebio",
+  "keyboard_name": "Keebio BDN9",
   "url": "https://keeb.io",
   "maintainer": "Keebio",
-  "usb": {
-    "vid": "0xCB10"
-  },
   "layouts": {
     "LAYOUT": {
       "layout": [

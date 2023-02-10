@@ -1,13 +1,7 @@
 {
     "keyboard_name": "Zeuspad",
-    "manufacturer": "Koobaczech",
-    "url": "",
     "maintainer": "Koobaczech",
-    "usb": {
-        "vid": "0x6963",
-        "pid": "0x6967",
-        "device_version": "0.0.1"
-    },
+    "url": "",
     "layouts": {
         "LAYOUT_all": {
             "layout": [

@@ -1,4 +1,4 @@
-/* Copyright 2022 @ Keychron (https://www.keychron.com)
+/* Copyright 2021 @ Keychron (https://www.keychron.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,6 @@
  */
 
 #include "q3.h"
-#include "rgb_matrix.h"
 
 // clang-format off
 
@@ -37,6 +36,7 @@ bool dip_switch_update_kb(uint8_t index, bool active) {
         return false;
     }
     if (index == 0) {
+        layer_state_set(1UL << (active ? 2 : 0));
         default_layer_set(1UL << (active ? 2 : 0));
     }
     return true;
@@ -46,44 +46,30 @@ bool dip_switch_update_kb(uint8_t index, bool active) {
 
 #if defined(RGB_MATRIX_ENABLE) && defined(CAPS_LOCK_LED_INDEX)
 
-bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
-    if (!process_record_user(keycode, record)) { return false; }
-    switch (keycode) {
-#ifdef RGB_MATRIX_ENABLE
-        case RGB_TOG:
-            if (record->event.pressed) {
-                switch (rgb_matrix_get_flags()) {
-                    case LED_FLAG_ALL: {
-                        rgb_matrix_set_flags(LED_FLAG_NONE);
-                        rgb_matrix_set_color_all(0, 0, 0);
-                    } break;
-                    default: {
-                        rgb_matrix_set_flags(LED_FLAG_ALL);
-                    } break;
-                }
-            }
-            if (!rgb_matrix_is_enabled()) {
-                rgb_matrix_set_flags(LED_FLAG_ALL);
-                rgb_matrix_enable();
-            }
-            return false;
-#endif
-    }
-    return true;
-}
+#    define CAPS_LOCK_MAX_BRIGHTNESS 0xFF
+#    ifdef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#        undef CAPS_LOCK_MAX_BRIGHTNESS
+#        define CAPS_LOCK_MAX_BRIGHTNESS RGB_MATRIX_MAXIMUM_BRIGHTNESS
+#    endif
 
-bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
-    if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) { return false; }
-    // RGB_MATRIX_INDICATOR_SET_COLOR(index, red, green, blue);
+#    define CAPS_LOCK_VAL_STEP 8
+#    ifdef RGB_MATRIX_VAL_STEP
+#        undef CAPS_LOCK_VAL_STEP
+#        define CAPS_LOCK_VAL_STEP RGB_MATRIX_VAL_STEP
+#    endif
 
+void rgb_matrix_indicators_kb(void) {
     if (host_keyboard_led_state().caps_lock) {
-        RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX, 255, 255, 255);
-    } else {
-        if (!rgb_matrix_get_flags()) {
-           RGB_MATRIX_INDICATOR_SET_COLOR(CAPS_LOCK_LED_INDEX, 0, 0, 0);
+        uint8_t b = rgb_matrix_get_val();
+        if (b < CAPS_LOCK_VAL_STEP) {
+            b = CAPS_LOCK_VAL_STEP;
+        } else if (b < (CAPS_LOCK_MAX_BRIGHTNESS - CAPS_LOCK_VAL_STEP)) {
+            b += CAPS_LOCK_VAL_STEP;  // one step more than current brightness
+        } else {
+            b = CAPS_LOCK_MAX_BRIGHTNESS;
         }
+        rgb_matrix_set_color(CAPS_LOCK_LED_INDEX, b, b, b);  // white, with the adjusted brightness
     }
-    return true;
 }
 
-#endif // CAPS_LOCK_LED_INDEX
+#endif

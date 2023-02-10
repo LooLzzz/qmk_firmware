@@ -1,9 +1,7 @@
-# The Uni v1 and v2
-
-![Uni v2](https://i.imgur.com/hIIK8xN.jpg)
+# The Uni
 
 -   Keyboard Maintainer: [Peter](https://github.com/petercpark)
--   Link to Keyboard Files: [The_Uni](https://github.com/petercpark/The_Uni) (For personal use only)
+-   Link to Keyboard Files: [The_Uni](https://github.com/petercpark/The_Uni)
 -   Hardware Supported:
     -   The Uni v1 and v2 (pro_micro)
 -   Hardware Availability: [https://www.stenokeyboards.com](https://www.stenokeyboards.com)
@@ -12,8 +10,8 @@
 
 Enter the bootloader by:
 
--   **Physical reset button**: On the Uni v3, briefly press the button on the back of the PCB.
--   **Reset Pads**: Uni v1 and v2 have pins/pads you must short instead (RST to GND).
+* **Physical reset button**: On the Uni v3, briefly press the button on the back of the PCB.
+* **Reset Pads**: Uni v1 and v2 have pins/pads you must short instead (RST to GND).
 
 Make examples for this keyboard (after setting up your build environment):
 

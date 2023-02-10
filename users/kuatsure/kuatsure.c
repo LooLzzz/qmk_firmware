@@ -124,7 +124,7 @@ void matrix_scan_user(void) {
     }
 
     // TMUX - shift to last pane and zoom
-    SEQ_ONE_KEY(KC_SEMICOLON) {
+    SEQ_ONE_KEY(KC_SCOLON) {
       tmux_prefix();
       SEND_STRING(";");
       tmux_pane_zoom();

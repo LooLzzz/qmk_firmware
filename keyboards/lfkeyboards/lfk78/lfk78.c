@@ -2,13 +2,10 @@
 
 #include <avr/timer_avr.h>
 #include <avr/wdt.h>
+#include "audio.h"
 #include "issi.h"
 #include "TWIlib.h"
 #include "lighting.h"
-
-#ifdef AUDIO_ENABLE
-#    include "audio.h"
-#endif
 
 uint16_t click_hz = CLICK_HZ;
 uint16_t click_time = CLICK_MS;
@@ -130,7 +127,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         clicking_notes(click_hz, click_time);
     }
 
-    if (keycode == QK_BOOT) {
+    if (keycode == RESET) {
         reset_keyboard_kb();
     }
 
@@ -151,12 +148,11 @@ void reset_keyboard_kb() {
     reset_keyboard();
 }
 
-bool led_update_kb(led_t led_state) {
-    bool res = led_update_user(led_state);
-    if(res) {
+void led_set_kb(uint8_t usb_led) {
+    // put your keyboard LED indicator (ex: Caps Lock LED) toggling code here
 #ifdef ISSI_ENABLE
 #    ifdef CAPSLOCK_LED
-    if (led_state.caps_lock) {
+    if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
         activateLED(0, 3, 7, 255);
     } else {
         activateLED(0, 3, 7, 0);
@@ -164,8 +160,7 @@ bool led_update_kb(led_t led_state) {
 #    endif // CAPSLOCK_LED
 #endif // ISS_ENABLE
 
-    }
-    return res;
+    led_set_user(usb_led);
 }
 
 // LFK lighting info

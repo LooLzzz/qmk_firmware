@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "qmk.definitions.v1",
     "title": "Common definitions used across QMK's jsonschemas.",
     "type": "object",
@@ -65,11 +65,24 @@
         ]
     },
     "key_unit": {
-        "type": "number"
+        "type": "number",
+        "min": 0.25
     },
     "keyboard": {
-        "type": "string",
-        "pattern": "^[0-9a-z][0-9a-z_/]*$"
+        "oneOf": [
+            {
+                "type": "string",
+                "enum": [
+                    "converter/numeric_keypad_IIe",
+                    "emptystring/NQG",
+                    "maple_computing/christmas_tree/V2017"
+                ]
+            },
+            {
+                "type": "string",
+                "pattern": "^[0-9a-z][0-9a-z_/]*$"
+            }
+        ]
     },
     "mcu_pin_array": {
         "type": "array",
@@ -90,11 +103,8 @@
                 "pattern": "^LINE_PIN\\d{1,2}$"
             },
             {
-                "type": "string",
-                "pattern": "^GP\\d{1,2}$"
-            },
-            {
-                "type": "integer"
+                "type": "number",
+                "multipleOf": 1
             },
             {
                 "type": "null"
@@ -105,12 +115,14 @@
         "type": "number"
     },
     "signed_int": {
-        "type": "integer"
+        "type": "number",
+        "multipleOf": 1
     },
     "signed_int_8": {
-        "type": "integer",
-        "minimum": -127,
-        "maximum": 127
+        "type": "number",
+        "min": -127,
+        "max": 127,
+        "multipleOf": 1
     },
     "string_array": {
         "type": "array",
@@ -126,20 +138,17 @@
     },
     "unsigned_decimal": {
         "type": "number",
-        "minimum": 0
+        "min": 0
     },
     "unsigned_int": {
-        "type": "integer",
-        "minimum": 0
+        "type": "number",
+        "min": 0,
+        "multipleOf": 1
     },
     "unsigned_int_8": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 255
-    },
-    "bit": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 1
+        "type": "number",
+        "min": 0,
+        "max": 255,
+        "multipleOf": 1
     }
 }

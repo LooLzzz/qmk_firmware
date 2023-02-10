@@ -4,10 +4,7 @@
 *~
 .DS_Store
 ._*
-
-# Merge files
-*.orig
-*.rej
+dummy_includes.h
 
 # Build artifacts
 .clang_complete
@@ -31,11 +28,16 @@ quantum/version.h
 *.uf2
 
 # Old-style QMK Makefiles
-/keyboards/**/Makefile
-
-# kbfirmware....
-/keyboards/**/kb.h
-/keyboards/**/kb.c
+/keyboards/*/Makefile
+/keyboards/*/*/Makefile
+/keyboards/*/*/*/Makefile
+/keyboards/*/*/*/*/Makefile
+/keyboards/*/*/*/*/*/Makefile
+/keyboards/*/keymaps/Makefile
+/keyboards/*/*/keymaps/Makefile
+/keyboards/*/*/*/keymaps/Makefile
+/keyboards/*/*/*/*/keymaps/Makefile
+/keyboards/*/*/*/*/*/keymaps/Makefile
 
 # Eclipse/PyCharm/Other IDE Settings
 *.iml
@@ -53,7 +55,6 @@ quantum/version.h
 build/
 cmake-build-debug
 CMakeLists.txt
-*.pdf
 
 # Let these ones be user specific, since we have so many different configurations
 *.code-workspace
@@ -65,25 +66,14 @@ CMakeLists.txt
 .vscode/launch.json
 .vscode/tasks.json
 .vscode/temp.sql
+keyboards/**/.vscode/
+users/**/.vscode/
 tags
 
-# Ignore image/font files
-*.bmp
-*.wbmp
+# Ignore image files
 *.gif
 *.jpg
-*.jpeg
 *.png
-*.apng
-*.mng
-*.svg
-*.webp
-*.webm
-*.avi
-*.mp4
-*.mpeg
-*.ttf
-*.otf
 
 # Things Travis sees
 /.vs

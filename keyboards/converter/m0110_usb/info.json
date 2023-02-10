@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Apple M0110(A) to USB Keyboard Converter",
-  "manufacturer": "QMK",
+  "keyboard_name": "M0110(A) keyboard converter",
   "url": "",
   "maintainer": "qmk",
-  "usb": {
-    "vid": "0xFEED",
-    "pid": "0x0110",
-    "device_version": "1.0.1"
-  },
   "layouts": {
     "LAYOUT_ansi": {
       "layout": [

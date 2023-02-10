@@ -1,13 +1,7 @@
 {
-    "keyboard_name": "BIOI F60",
-    "manufacturer": "Basic IO Instruments",
+    "keyboard_name": "f60",
     "url": "",
     "maintainer": "kb-elmo",
-    "usb": {
-        "vid": "0x8101",
-        "pid": "0x4660",
-        "device_version": "0.0.1"
-    },
     "layouts": {
         "LAYOUT_all": {
             "layout": [

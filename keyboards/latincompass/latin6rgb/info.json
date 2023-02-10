@@ -1,13 +1,7 @@
 {
-  "keyboard_name": "Latin6rgb",
-  "manufacturer": "18438880",
+  "keyboard_name": "latin6rgb",
   "url": "",
   "maintainer": "18438880",
-  "usb": {
-    "vid": "0x7C88",
-    "pid": "0x7C96",
-    "device_version": "0.0.1"
-  },
   "layouts": {
     "LAYOUT_numpad_2x3": {
       "layout": [
