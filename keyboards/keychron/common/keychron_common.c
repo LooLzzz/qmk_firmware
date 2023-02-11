@@ -40,6 +40,13 @@ void housekeeping_task_keychron(void) {
 }
 
 bool process_record_keychron(uint16_t keycode, keyrecord_t *record) {
+    // Enable RGB on any keypress if currently disabled after Win+L
+    static bool rgb_sleep = false;
+    if (rgb_sleep && record->event.pressed) {
+        rgb_matrix_enable_noeeprom();
+        rgb_sleep = false;
+    }
+
     switch (keycode) {
         case KC_MISSION_CONTROL:
             if (record->event.pressed) {
